@@ -1,4 +1,4 @@
-Kitchenstore -- A samples Rails 4 appliation
+Kitchenstore -- A sample Rails 4 application
 ============================================
 
 Has utilised all the latest Rails 4 features
