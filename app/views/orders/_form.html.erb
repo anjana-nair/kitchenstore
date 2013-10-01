@@ -1,0 +1,25 @@
+
+<h2> You have added the following items to yoru shopping cart: </h2>
+
+<%= @order.cart.products.each do |product|%>
+
+<p>Name: <%= product.name%> : <%= product.description%></p>
+
+<% end %>
+
+<%= form_for :order do |f| %>
+
+
+<%= f.text_field "Payment type", :payment_card_type%>
+
+
+<%= f.text_field "CVV Code", :payment_cvv_code %>
+
+
+Expiry Date: <%= date_select "order", "payment_expiry_date"%>
+
+<%= f.submit %>
+
+
+
+<% end %>

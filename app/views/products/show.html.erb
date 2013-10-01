@@ -1,0 +1,74 @@
+
+
+<h2> Listing product information </h2>
+
+<table>
+	<tr>
+		<th> Name </th>
+		<th> Description </th>
+		<th> Price </th>
+	</tr>
+	
+	<tr>
+		<td>
+			<%= @product.name %>
+		</td>
+		<td>
+			<%= @product.description %>
+		</td>
+		<td>
+			<%= @product.price %>
+		</td>
+	</tr>
+</table>
+
+<hr />
+
+<h2>Reviews:</h2>
+
+<% @product.reviews.each do |review| %>
+
+<p>
+	<strong> Commenter: </strong>
+	<%=review.commenter%>
+	
+</p>
+
+<p>
+	<strong> Your Review of the product </strong>
+	<%=review.body%>
+	
+</p>
+
+
+
+<% end %>
+
+<hr />
+
+<%= form_for ([@product, @product.reviews.build ]) do |f| %>
+
+<p>
+	<%= f.label :commenter %> <br/>
+	<%= f.text_field :commenter %>
+
+</p>
+
+<p>
+	<%= f.label :body %> <br/>
+	<%= f.text_area :body %>
+
+</p>
+<p>
+	<%= f.submit %>
+</p>
+
+
+
+<% end %>
+
+
+
+<p>
+	<%= link_to "Home page", products_path %>
+</p>

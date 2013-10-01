@@ -1,0 +1,72 @@
+<%=form_for(product) do |f|%>
+
+<% if @product.errors.any? %>
+
+<div>
+<h2> <%= pluralize(@product.errors.count, "error")%> prohibited this product from being saved: </h2>
+
+<ul>
+	<% @product.errors.full_messages.each do |msg| %>
+	
+	<li> <%= msg %> </li>
+	
+	
+	<% end %>
+	
+	
+</ul>
+
+</div>
+<% end %>
+
+
+
+<table>
+<tr>
+	<td>
+		<%= f.label :name %>
+	</td><td>
+		<%= f.text_field :name %>
+	</td>
+</tr>
+<tr>
+	<td>
+		<%= f.label :description %>
+	</td><td>
+		<%= f.text_area :description %>
+	</td>
+</tr>
+<tr>	
+	<td>
+		<%= f.label :price %>
+	</td><td>	
+	<%= f.text_field :price %>
+	</td>
+</tr>
+<tr><td><hr /></td><td><hr /></td></tr>
+<tr><td>Create categories for this product:</td></tr>
+<%= fields_for :category do |cat| %>
+<tr>
+	<td>
+	<%= cat.label :name, "Name of the category"%>
+	</td>
+	<td>
+	<%= cat.text_field :name%>
+	</td>
+</tr>
+<tr>
+	<td>
+	<%= cat.label :description, "Description of the category"%>
+	</td>
+	<td>
+	<%= cat.text_field :description%>
+	</td>
+</tr>
+<% end %>
+
+<tr>	
+	<td><%= f.submit %>
+	</td>
+</tr>
+</table>
+<% end %>

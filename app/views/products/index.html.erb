@@ -1,0 +1,37 @@
+
+
+<h1> Listing all products </h1>
+
+<table>
+	<tr>
+		<th> Name </th>
+		<th> Description </th>
+		<th> Price </th>
+	</tr>
+	
+	<% @products.each do |product|%>
+	
+	<tr>
+		<td>
+			<%= product.name %>
+		</td>
+		<td>
+			<%= product.description %>
+		</td>
+		<td>
+			<%= product.price %>
+		</td>
+		<td>
+			<%= link_to "Product Details", product_path(product.id)%>
+		</td>
+		<td>
+			<%= link_to "Update Product", edit_product_path(product.id)%>
+		</td>
+		<td>
+			<%= link_to "Delete Product", product_path(product.id), {:method => :delete}%>
+		</td>
+	</tr>
+	
+	<% end %>
+</table>
+

@@ -1,0 +1,19 @@
+
+
+<div id="codes">
+<% @codes.each do |code| %>
+    <%=code.name %>
+<% end %>
+</div>
+
+
+<h2>New code</h2>
+
+<%= form_for [@codeable, Code.new] do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
