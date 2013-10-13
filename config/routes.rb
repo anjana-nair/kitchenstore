@@ -1,6 +1,7 @@
 Kitchenstore::Application.routes.draw do
 
 
+  devise_for :admins
   devise_for :stars
   devise_for :payments
   devise_for :containers
