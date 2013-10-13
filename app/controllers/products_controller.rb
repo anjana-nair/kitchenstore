@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   
   before_filter :get_id, :except => [:new, :index, :create]
+  before_filter :authenticate_admin!
   
   def new
     @product = Product.new

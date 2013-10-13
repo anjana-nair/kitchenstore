@@ -2,18 +2,12 @@ Kitchenstore::Application.routes.draw do
 
 
   devise_for :admins
-  devise_for :stars
-  devise_for :payments
-  devise_for :containers
-  devise_for :codes
-  devise_for :baskets
-  devise_for :categories
-  devise_for :carts
-  devise_for :orders
-  devise_for :reviews
-  devise_for :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  devise_scope :admin do
+    get "admins/sign_out", :to => "devise/sessions#destroy"
+  end
 
   
   resources :products do 

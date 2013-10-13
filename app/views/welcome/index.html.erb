@@ -21,14 +21,21 @@
 		<td>
 			<%= product.price %>
 		</td>
+		
 		<td>
 			<b><%= link_to "|Add to Shopping Cart|", carts_add_to_cart_path(:product_id => product.id)%></b>
-		</td>
-		<td>
-			<b><%= link_to "|Ready to Order?|", new_order_path%></b>
 		</td>
 	</tr>
 	
 	<% end %>
+	<tr>
+		<td>
+			<b><%= link_to "|Ready to Order?|", new_order_path%></b>
+		</td>
+				<td>
+			<b><%= link_to "|Sign Oout|", destroy_admin_session_path, method: :delete, data: { confirm: 'Are you sure?' }%></b>
+		</td>
+	</tr>	
+		
 </table>
 
