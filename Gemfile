@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'mysql2'
@@ -49,4 +51,6 @@ group :test, :development do
   gem "spork", :git => "git://github.com/chrismdp/spork.git"
   gem 'rspec-rails'
   gem 'ZenTest'
+  gem 'rails_best_practices'
+  gem 'factory_girl_rails', "~> 4.0"
 end
